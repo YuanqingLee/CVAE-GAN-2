@@ -102,7 +102,7 @@ class FeatureMatchingLayer(Layer):
     def lossfun(self, f1, f2):
         f1_avg = K.mean(f1, axis=0)
         f2_avg = K.mean(f2, axis=0)
-        return 0.5 * K.mean(K.square(f1_avg - f2_avg))
+        return 0.001 * 0.5 * K.mean(K.square(f1_avg - f2_avg))
 
     def call(self, inputs):
         f1 = inputs[0]
